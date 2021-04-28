@@ -1,0 +1,36 @@
+.movie-poster {
+	display: inline-block;
+	height: 300px;
+	border: 1px solid black;
+	margin: 10px;
+}
+
+.details-wrapper {
+	display: inline-block;
+	vertical-align: top;
+	padding: 10px 0;
+	width: 600px;
+}
+
+.title {
+	margin-bottom: 5px;
+	font-weight: bold;
+	font-size: large;
+	display: inline-block;
+}
+
+.rating {
+	float: right;
+	width: 100px;
+	height: 30px;
+}
+
+.description {
+	margin-top: 10px;
+}
+
+.nav-back {
+	cursor: pointer;
+	padding-left: 10px;
+	padding-top: 10px;
+}

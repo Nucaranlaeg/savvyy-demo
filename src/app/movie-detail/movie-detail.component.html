@@ -1,0 +1,30 @@
+<div *ngIf="movie">
+	<div class="nav-back" (click)="onUnSelectMovie()">
+		<fa-icon [icon]="faLongArrowAltLeft"></fa-icon>
+		Return to list
+	</div>
+	<img class="movie-poster" [src]="movie.backdrop">
+	<div class="details-wrapper">
+		<div class="title">{{movie.title}} ({{movie.imdb_rating}})</div>
+		<div class="rating">
+			<fa-icon [icon]="faStar" *ngIf="(movie.imdb_rating / 2) > 0.75"></fa-icon>
+			<fa-icon [icon]="faStar" *ngIf="(movie.imdb_rating / 2) > 1.75"></fa-icon>
+			<fa-icon [icon]="faStar" *ngIf="(movie.imdb_rating / 2) > 2.75"></fa-icon>
+			<fa-icon [icon]="faStar" *ngIf="(movie.imdb_rating / 2) > 3.75"></fa-icon>
+			<fa-icon [icon]="faStar" *ngIf="(movie.imdb_rating / 2) > 4.75"></fa-icon>
+			<fa-icon [icon]="faStarHalfAlt" *ngIf="(movie.imdb_rating / 2) % 1 >= 0.25 && (movie.imdb_rating / 2) % 1 <= 0.75"></fa-icon>
+			<fa-icon [icon]="faEmptyStar" *ngIf="(movie.imdb_rating / 2) < 0.25"></fa-icon>
+			<fa-icon [icon]="faEmptyStar" *ngIf="(movie.imdb_rating / 2) < 1.25"></fa-icon>
+			<fa-icon [icon]="faEmptyStar" *ngIf="(movie.imdb_rating / 2) < 2.25"></fa-icon>
+			<fa-icon [icon]="faEmptyStar" *ngIf="(movie.imdb_rating / 2) < 3.25"></fa-icon>
+			<fa-icon [icon]="faEmptyStar" *ngIf="(movie.imdb_rating / 2) < 4.25"></fa-icon>
+		</div>
+		<div class="info">
+			{{movie.released_on.getFullYear()}} | {{movie.length}} | {{getDirectors()}}
+		</div>
+		<div class="cast">
+			Cast: {{getCast()}}
+		</div>
+		<div class="description">{{movie.overview}}</div>
+	</div>
+</div>

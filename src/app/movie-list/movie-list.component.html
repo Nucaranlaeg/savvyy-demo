@@ -1,0 +1,8 @@
+<div *ngFor="let genre of genres" class="genre">
+	<div class="genre-name">{{genre}}</div>
+	<div class="movie-poster-list">
+		<div *ngFor="let movie of sortedMovies[genre]" class="movie-poster-wrapper" (click)="onSelectMovie(movie)">
+			<img class="movie-poster" [src]="movie.poster">
+		</div>
+	</div>
+</div>
